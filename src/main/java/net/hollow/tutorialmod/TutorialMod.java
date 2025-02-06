@@ -1,6 +1,7 @@
 package net.hollow.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.hollow.tutorialmod.Item.ModCreativeModeTabs;
 import net.hollow.tutorialmod.Item.ModItems;
 import net.hollow.tutorialmod.block.ModBlocks;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -34,6 +35,8 @@ public class TutorialMod
         modEventBus.addListener(this::commonSetup);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
+        ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
